@@ -30,48 +30,30 @@ public class TryProcessing extends PApplet {
 
     @Override
     public void draw() {
-        if(i%4==0)
-        {
             firstRow();
             secondRow();
             thirdRow();
             fourthRow();
-        }
-        else if(i%4==1)
-        {
-            secondRow();
-            thirdRow();
-            fourthRow();
-        }
-        else if(i%4==2)
-        {
-            thirdRow();
-            fourthRow();
-        }
-        else {
-            fourthRow();
-        }
-        i++;
     }
     public void firstRow()
     {
         ellipse(x,HEIGHT/5,DIAMETER,DIAMETER);
-        x++;
+        x+=1;
     }
     public void secondRow()
     {
         ellipse(y,2*HEIGHT/5,DIAMETER,DIAMETER);
-        y++;
+        y+=2;
     }
     public void thirdRow()
     {
         ellipse(z,3*HEIGHT/5,DIAMETER,DIAMETER);
-        z++;
+        z+=3;
     }
     public void fourthRow()
     {
         ellipse(a,4*HEIGHT/5,DIAMETER,DIAMETER);
-        a++;
+        a+=4;
     }
 
 }
