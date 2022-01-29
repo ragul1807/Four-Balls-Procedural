@@ -1,13 +1,11 @@
 import processing.core.PApplet;
+
+
 public class TryProcessing extends PApplet {
     public static final int WIDTH =640;
     public static final int HEIGHT =480;
     public static final int DIAMETER = 50;
-    int x;
-    int y;
-    int z;
-    int a;
-    int i;
+    int[] arr =new int[4];
 
     public static void main(String[] args) {
 
@@ -18,8 +16,6 @@ public class TryProcessing extends PApplet {
         {
             System.out.println("Settings called");
             super.settings();
-            int WIDTH = 640;
-            int HEIGHT = 480;
             size(WIDTH, HEIGHT);
         }
 
@@ -30,31 +26,23 @@ public class TryProcessing extends PApplet {
 
     @Override
     public void draw() {
-            firstRow();
-            secondRow();
-            thirdRow();
-            fourthRow();
+        for(int i=0;i<4;i++)
+        {
+            int h=calculateHeight(i);
+            drawEllipse(i,arr,h);
+        }
     }
-    public void firstRow()
-    {
-        ellipse(x,HEIGHT/5,DIAMETER,DIAMETER);
-        x+=1;
+
+    private int calculateHeight(int i) {
+        return (i+1)*HEIGHT/5;
     }
-    public void secondRow()
-    {
-        ellipse(y,2*HEIGHT/5,DIAMETER,DIAMETER);
-        y+=2;
+
+    private void drawEllipse(int i, int[] arr, int height) {
+        ellipse(arr[i],height,DIAMETER,DIAMETER);
+        arr[i] += i+1;
     }
-    public void thirdRow()
-    {
-        ellipse(z,3*HEIGHT/5,DIAMETER,DIAMETER);
-        z+=3;
-    }
-    public void fourthRow()
-    {
-        ellipse(a,4*HEIGHT/5,DIAMETER,DIAMETER);
-        a+=4;
-    }
+
+
 
 }
 
